@@ -6,6 +6,9 @@ import pandas as pd
 import re
 import sys
 import wx
+import requests
+import os
+import urllib.request
 
 
 class MyFileDropTarget(wx.FileDropTarget):
@@ -60,6 +63,7 @@ class MyFrame(wx.Frame):
                 # kik-net
                 else:
                     convert_kiknet2csv(files)
+        print("finish convert")
         dialog = wx.MessageDialog(self, 'ファイル変換が完了しました', '完了')
         dialog.ShowModal()
         dialog.Destroy()
@@ -89,8 +93,8 @@ def convert_knet2csv(files):
         # import data (earthquake)
         data = pd.read_csv(file,header=None)
         # import station data
-        data_station = pd.read_csv("sitepub_all_sj.csv", encoding="shift-jis")
-        print(data_station)
+        #data_station = pd.read_csv("sitepub_all_sj.csv", encoding="shift-jis")
+        #print(data_station)
 
         # Scale Factor
         scale_factor = 0.0
@@ -123,7 +127,7 @@ def convert_knet2csv(files):
         for row in data[5:6].itertuples():
             val = str(row[1])
             station_code = (re.findall(r'Station Code      (.*)',val)[0])
-        station_place = str(data_station[data_station['code'].str.contains(station_code)]["place"].values[0])
+        #station_place = str(data_station[data_station['code'].str.contains(station_code)]["place"].values[0])
 
         # wave data
         data_earthquake = data[17:]
@@ -147,7 +151,7 @@ def convert_knet2csv(files):
         # plt.show()
 
         output_data = pd.DataFrame(array_earthquake)
-        output_data.to_csv(station_place+"_"+str(direction)+".csv", encoding="shift-jis", header=[station_place+"_"+str(direction)+" "+str(sampling_frec)+"(Hz) unit:(gal)"])
+        output_data.to_csv("save_dir/"+station_code+"_"+str(direction)+".csv", encoding="shift-jis", header=[station_code+"_"+str(direction)+" "+str(sampling_frec)+"(Hz) unit:(gal)"])
     shutil.rmtree('./temp/')
 
 
@@ -159,8 +163,8 @@ def convert_kiknet2csv(files):
         # import data (earthquake)
         data = pd.read_csv(file,header=None)
         # import station data
-        data_station = pd.read_csv("sitepub_all_sj.csv", encoding="shift-jis")
-        print(data_station)
+        #data_station = pd.read_csv("sitepub_all_sj.csv", encoding="shift-jis")
+        #print(data_station)
 
         # Scale Factor
         scale_factor = 0.0
@@ -199,7 +203,7 @@ def convert_kiknet2csv(files):
         for row in data[5:6].itertuples():
             val = str(row[1])
             station_code = (re.findall(r'Station Code      (.*)',val)[0])
-        station_place = str(data_station[data_station['code'].str.contains(station_code)]["place"].values[0])
+        #station_place = str(data_station[data_station['code'].str.contains(station_code)]["place"].values[0])
 
         # wave data
         data_earthquake = data[17:]
@@ -223,11 +227,16 @@ def convert_kiknet2csv(files):
         # plt.show()
 
         output_data = pd.DataFrame(array_earthquake)
-        output_data.to_csv(station_place+"_"+str(direction)+".csv", encoding="shift-jis", header=[station_place+"_"+str(direction)+" "+str(sampling_frec)+"(Hz) unit:(gal)"])
+        output_data.to_csv("save_dir/"+station_code+"_"+str(direction)+".csv", encoding="shift-jis", header=[station_code+"_"+str(direction)+" "+str(sampling_frec)+"(Hz) unit:(gal)"])
     shutil.rmtree('./temp/')
 
 
 if __name__=="__main__":
+    save_dir = "save_dir"
+    if(not os.path.exists(save_dir)):
+        os.mkdir(save_dir)
+    if(os.path.exists("./temp")):
+        shutil.rmtree('./temp/')
     app = wx.App()
     MyFrame()
     app.MainLoop()
