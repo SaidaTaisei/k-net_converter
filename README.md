@@ -2,7 +2,7 @@
 k-net, kik-net to csv
 
 # Download
-Windows: [download converter.zip](https://github.com/SaidaTaisei/k-net_converter/raw/master/converter.zip)
+Windows: [download converter.zip](https://www.u.tsukuba.ac.jp/~s2120854/knet-converter.zip)
 
 # How to use
 1. Download converter.zip from the link above.
@@ -11,6 +11,13 @@ Windows: [download converter.zip](https://github.com/SaidaTaisei/k-net_converter
 4. Drop the file you downloaded from k-net or kik-net (text format, binary is not supported, multiple files are acceptable) in the drag area.
 5. Click the Run button.
 6. The csv file will be output in the same directory as converter.exe.
+
+
+https://user-images.githubusercontent.com/62459697/182280770-abf01fc9-07fa-4069-979b-f89eba16c8f7.mp4
+
+
+# Input format
+The input type is a tar.gz file downloaded from the [NIED web page](https://www.kyoshin.bosai.go.jp/kyoshin/). (When expanded, the file contains .EW, .NS, and .UD.)
 
 # Output format
 Output format is csv.  
