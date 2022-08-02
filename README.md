@@ -16,8 +16,8 @@ Windows: [download converter.zip](https://www.u.tsukuba.ac.jp/~s2120854/knet-con
 https://user-images.githubusercontent.com/62459697/182280770-abf01fc9-07fa-4069-979b-f89eba16c8f7.mp4
 
 
-
-
+# Input format
+The input type is a tar.gz file downloaded from the [NIED web page](https://www.kyoshin.bosai.go.jp/kyoshin/). (When expanded, the file contains .EW, .NS, and .UD.)
 
 # Output format
 Output format is csv.  
