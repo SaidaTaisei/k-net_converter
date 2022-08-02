@@ -2,7 +2,7 @@
 k-net, kik-net to csv
 
 # Download
-Windows: [download converter.zip](https://github.com/SaidaTaisei/k-net_converter/raw/master/converter.zip)
+Windows: [download converter.exe](https://github.com/SaidaTaisei/k-net_converter/raw/master/converter_build/converter.exe)
 
 # How to use
 1. Download converter.zip from the link above.
