@@ -12,6 +12,11 @@ Windows: [download converter.zip](https://www.u.tsukuba.ac.jp/~s2120854/knet-con
 5. Click the Run button.
 6. The csv file will be output in the same directory as converter.exe.
 
+
+https://user-images.githubusercontent.com/62459697/182280519-aab15d21-e1f8-4216-a278-bfa08189f9c0.mp4
+
+
+
 # Output format
 Output format is csv.  
 Hz will be the same as the original data.  
