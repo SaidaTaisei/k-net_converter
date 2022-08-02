@@ -13,7 +13,9 @@ Windows: [download converter.zip](https://www.u.tsukuba.ac.jp/~s2120854/knet-con
 6. The csv file will be output in the same directory as converter.exe.
 
 
-![How to use](https://user-images.githubusercontent.com/62459697/182280519-aab15d21-e1f8-4216-a278-bfa08189f9c0.mp4)
+https://user-images.githubusercontent.com/62459697/182280770-abf01fc9-07fa-4069-979b-f89eba16c8f7.mp4
+
+
 
 
 
