@@ -3,7 +3,7 @@ k-net, kik-net to csv
 
 # Download
 The previous link was broken, so I updated the link.  
-Windows: [download converter.zip](https://github.com/SaidaTaisei/k-net_converter/releases/download/v1.0.0/converter.exe)
+Windows: download [converter.exe](https://github.com/SaidaTaisei/k-net_converter/releases/download/v1.0.0/converter.exe)
 
 # How to use
 1. Download converter.zip from the link above.
